@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ChessViewController.swift
 //  Chess
 //
 //  Created by Varun Rathi on 01/06/19.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ChessViewController: UIViewController {
 
     @IBOutlet weak var lblDisplayTurn:UILabel!
     @IBOutlet weak var lblCheckStatus:UILabel!
