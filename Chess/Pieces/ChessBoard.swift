@@ -6,4 +6,8 @@
 //  Copyright © 2019 Varun Rathi. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class ChessBoard: NSObject {
+    
+}

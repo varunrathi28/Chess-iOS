@@ -8,11 +8,17 @@
 
 import UIKit
 
-typealias UIChessPiece = UILabel
+//typealias UIChessPiece = UILabel
 
 
+public class UIChessPiece:UILabel,Piece {
+    var symbol: String = ""
+}
 
-extension UIChessPiece: Piece {
+
+//extension UIChessPiece: Piece {
+
+extension UIChessPiece{
 
 
     var color : UIColor {

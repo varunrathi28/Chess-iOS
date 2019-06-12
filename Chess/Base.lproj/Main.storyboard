@@ -338,14 +338,13 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vcm-Mt-VDT">
-                                <rect key="frame" x="166" y="535" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vcm-Mt-VDT">
+                                <rect key="frame" x="20" y="535" width="335" height="92"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="White Turn" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wRl-cb-aoc">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="White Turn" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wRl-cb-aoc">
                                 <rect key="frame" x="85" y="481" width="193" height="46"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="28"/>
                                 <nil key="textColor"/>
@@ -353,13 +352,25 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="0.73640950520000004" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="vcm-Mt-VDT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="8lY-vy-MCs"/>
+                            <constraint firstItem="wRl-cb-aoc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="85" id="9wR-YQ-qM6"/>
+                            <constraint firstItem="vcm-Mt-VDT" firstAttribute="top" secondItem="wRl-cb-aoc" secondAttribute="bottom" constant="8" symbolic="YES" id="bM4-92-ffu"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wRl-cb-aoc" secondAttribute="trailing" constant="97" id="dZX-Ir-Ttd"/>
+                            <constraint firstAttribute="trailing" secondItem="vcm-Mt-VDT" secondAttribute="trailing" constant="20" id="dwl-2U-N0F"/>
+                            <constraint firstAttribute="bottom" secondItem="vcm-Mt-VDT" secondAttribute="bottom" constant="40" id="lWi-HR-31a"/>
                             <constraint firstItem="wRl-cb-aoc" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="q7R-iJ-hOa"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="wRl-cb-aoc" secondAttribute="bottom" constant="140" id="sYl-dD-EtE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Le9-Yp-IlO" appends="YES" id="Ij6-am-AbB"/>
+                        </connections>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="Le9-Yp-IlO"/>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="132.68365817091455"/>
         </scene>
