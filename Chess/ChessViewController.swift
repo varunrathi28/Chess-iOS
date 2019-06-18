@@ -18,17 +18,93 @@ class ChessViewController: UIViewController {
     var startOrigin: CGPoint!
     var endOrigin:CGPoint!
     
-    static  var SPACE_FROM_LEFT_EDGE:Int = 8
-    static  var SPACE_FROM_TOP_EDGE:Int = 8
+    static  var SPACE_FROM_LEFT_EDGE:Int = 36
+    static  var SPACE_FROM_TOP_EDGE:Int = 148
     static var tileSize:Int = 38
     var chessGame:ChessGame!
     var chessPieces:[UIChessPiece]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+         chessPieces = []
+        initializeGameScene()
+       
         
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    
+    func initializeGameScene(){
+    
+        for chessPiece in chessPieces {
+            chessPiece.removeFromSuperview()
+        }
+    
+        chessGame = ChessGame.init(viewController: self)
+    }
+    
+    
+    @IBAction func newGameTapped(){
+    
+        initializeGameScene()
+    
+    }
+    
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        if let dragged = touches.first?.view as? UIChessPiece {
+            pieceDragged = dragged
+            startOrigin = pieceDragged.frame.origin
+        }
+    }
+
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        if pieceDragged != nil  {
+        drag(piece: pieceDragged, using: panGesture)
+        }
+    }
+
+
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        if pieceDragged != nil{
+            
+            let touchCoordinate = touches.first!.location(in: view)
+            
+            var x = Int(touchCoordinate.x)
+            var y = Int(touchCoordinate.y)
+            
+            x -= ChessViewController.SPACE_FROM_LEFT_EDGE
+            y -= ChessViewController.SPACE_FROM_TOP_EDGE
+        
+            x = (x / ChessViewController.tileSize) * ChessViewController.tileSize
+            y = (y / ChessViewController.tileSize) * ChessViewController.tileSize
+            
+            x += ChessViewController.SPACE_FROM_LEFT_EDGE
+            y += ChessViewController.SPACE_FROM_TOP_EDGE
+            
+           endOrigin  = CGPoint(x: x, y: y)
+           
+           
+           let sourceIndex = BoardIndex(row: 0, col: 0 )
+           
+           let destinationIndex = BoardIndex(row: 0, col: 0 )
+           
+         //  if chessGame.chessBoar
+        }
+        
+    }
+    
+    func drag(piece:UIChessPiece,using gestureRecognizer:UIPanGestureRecognizer){
+    
+        let translation  = gestureRecognizer.translation(in: view)
+        let newCenterX = translation.x + piece.center.x
+        let newCenterY = translation.y + piece.center.y
+        piece.center = CGPoint(x: newCenterX, y: newCenterY)
+        gestureRecognizer.setTranslation(CGPoint.zero, in: view)
+    
     }
 
 

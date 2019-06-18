@@ -94,29 +94,29 @@ class ChessBoard: NSObject {
                         
                     case 0 :
                         
-                        board[row][col] = Rook(frame: frame, color: UIColor.white, vc: vc)
+                        board[row][col] = Rook(frame: frame, color: UIColor.black, vc: vc)
                         
                     case 1:
-                        board[row][col] = Knight(frame: frame, color: UIColor.white, vc: vc)
+                        board[row][col] = Knight(frame: frame, color: UIColor.black, vc: vc)
                         
                     case 2:
-                        board[row][col] = Bishop(frame: frame, color: UIColor.white, vc: vc)
+                        board[row][col] = Bishop(frame: frame, color: UIColor.black, vc: vc)
                         
                     case 3:
-                        whiteKing = King(frame: frame, color: UIColor.white, vc: vc)
+                        whiteKing = King(frame: frame, color: UIColor.black, vc: vc)
                         board[row][col] = whiteKing
                         
                     case 4:
-                         board[row][col] = Queen(frame: frame, color: UIColor.white, vc: vc)
+                         board[row][col] = Queen(frame: frame, color: UIColor.black, vc: vc)
                         
                     case 5:
-                        board[row][col] = Bishop(frame: frame, color: UIColor.white, vc: vc)
+                        board[row][col] = Bishop(frame: frame, color: UIColor.black, vc: vc)
                         
                     case 6:
-                        board[row][col] = Knight(frame: frame, color: UIColor.white, vc: vc)
+                        board[row][col] = Knight(frame: frame, color: UIColor.black, vc: vc)
                         
                     case 7:
-                        board[row][col] = Rook(frame: frame, color: UIColor.white, vc: vc)
+                        board[row][col] = Rook(frame: frame, color: UIColor.black, vc: vc)
                         
                     default:
                         board[row][col] =  Dummy(with: frame)

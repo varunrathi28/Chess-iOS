@@ -10,6 +10,18 @@ import UIKit
 
 class ChessGame:NSObject {
 
+    var chessBoard:ChessBoard!
+
+    init(viewController:ChessViewController){
+    
+        chessBoard = ChessBoard.init(controller: viewController)
+    }
+    
+    func isValidMove(with piece:UIChessPiece, from sourceIndex:BoardIndex, to destinationIndex:BoardIndex)-> Bool {
+    
+        return true
+    }
+
 
  }
 
