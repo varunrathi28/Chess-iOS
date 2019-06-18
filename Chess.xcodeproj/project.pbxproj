@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8BF67AC322A1AECB0005A149 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF67AC222A1AECB0005A149 /* AppDelegate.swift */; };
-		8BF67AC522A1AECB0005A149 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF67AC422A1AECB0005A149 /* ViewController.swift */; };
+		8BF67AC522A1AECB0005A149 /* ChessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF67AC422A1AECB0005A149 /* ChessViewController.swift */; };
 		8BF67AC822A1AECB0005A149 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BF67AC622A1AECB0005A149 /* Main.storyboard */; };
 		8BF67ACA22A1AECC0005A149 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BF67AC922A1AECC0005A149 /* Assets.xcassets */; };
 		8BF67ACD22A1AECC0005A149 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BF67ACB22A1AECC0005A149 /* LaunchScreen.storyboard */; };
@@ -30,7 +30,7 @@
 /* Begin PBXFileReference section */
 		8BF67ABF22A1AECB0005A149 /* Chess.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chess.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BF67AC222A1AECB0005A149 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8BF67AC422A1AECB0005A149 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8BF67AC422A1AECB0005A149 /* ChessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChessViewController.swift; sourceTree = "<group>"; };
 		8BF67AC722A1AECB0005A149 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8BF67AC922A1AECC0005A149 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8BF67ACC22A1AECC0005A149 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -82,7 +82,7 @@
 			children = (
 				8BF67AD622A1AF990005A149 /* Pieces */,
 				8BF67AC222A1AECB0005A149 /* AppDelegate.swift */,
-				8BF67AC422A1AECB0005A149 /* ViewController.swift */,
+				8BF67AC422A1AECB0005A149 /* ChessViewController.swift */,
 				8BF67AC622A1AECB0005A149 /* Main.storyboard */,
 				8BF67AC922A1AECC0005A149 /* Assets.xcassets */,
 				8BF67ACB22A1AECC0005A149 /* LaunchScreen.storyboard */,
@@ -185,7 +185,7 @@
 				8BF67AD822A1AFA60005A149 /* Knight.swift in Sources */,
 				8BF67AE822A1B05B0005A149 /* ChessBoard.swift in Sources */,
 				8BF67AEE22A1B0BF0005A149 /* StartScreen.swift in Sources */,
-				8BF67AC522A1AECB0005A149 /* ViewController.swift in Sources */,
+				8BF67AC522A1AECB0005A149 /* ChessViewController.swift in Sources */,
 				8BF67AE422A1B01F0005A149 /* Dummy.swift in Sources */,
 				8BF67ADE22A1AFB90005A149 /* Queen.swift in Sources */,
 				8BF67AE622A1B03F0005A149 /* ChessGame.swift in Sources */,

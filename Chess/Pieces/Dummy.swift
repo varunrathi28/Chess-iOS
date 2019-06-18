@@ -9,9 +9,12 @@
 import UIKit
 
 class Dummy :Piece {
-    
+
+    var symbol: String = " "
     private var xStorage:CGFloat!
     private var yStorage:CGFloat!
+    
+    
 
     var x: CGFloat{
     
