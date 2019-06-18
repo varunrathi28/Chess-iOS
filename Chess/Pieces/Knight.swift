@@ -10,7 +10,7 @@ import UIKit
 
 class Knight:UIChessPiece {
 
- init(frame:CGRect, color:UIColor, vc:ViewController) {
+ init(frame:CGRect, color:UIColor, vc:ChessViewController) {
         super.init(frame: frame)
     
         if (color ==  UIColor.black){
