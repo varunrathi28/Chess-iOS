@@ -65,6 +65,9 @@ class ChessBoard: NSObject {
         
         vc = controller
         
+        let  lightColor = UIColor.darkGray
+        let darkColor = UIColor.cyan
+        
         // Init matrix with dummies
         
         let dummyRow = Array(repeating:Dummy(), count: number_Col)
@@ -84,29 +87,29 @@ class ChessBoard: NSObject {
                         
                     case 0 :
                         
-                        board[row][col] = Rook(frame: frame, color: UIColor.white, vc: vc)
+                        board[row][col] = Rook(frame: frame, color: lightColor, vc: vc)
                         
                     case 1:
-                        board[row][col] = Knight(frame: frame, color: UIColor.white, vc: vc)
+                        board[row][col] = Knight(frame: frame, color: lightColor, vc: vc)
                         
                     case 2:
-                        board[row][col] = Bishop(frame: frame, color: UIColor.white, vc: vc)
+                        board[row][col] = Bishop(frame: frame, color: lightColor, vc: vc)
                         
                     case 3:
-                        board[row][col] = Queen(frame: frame, color: UIColor.white, vc: vc)
+                        board[row][col] = Queen(frame: frame, color: lightColor, vc: vc)
                         
                     case 4:
-                        whiteKing = King(frame: frame, color: UIColor.white, vc: vc)
+                        whiteKing = King(frame: frame, color: lightColor, vc: vc)
                         board[row][col] = whiteKing
                         
                     case 5:
-                        board[row][col] = Bishop(frame: frame, color: UIColor.white, vc: vc)
+                        board[row][col] = Bishop(frame: frame, color: lightColor, vc: vc)
                         
                     case 6:
-                        board[row][col] = Knight(frame: frame, color: UIColor.white, vc: vc)
+                        board[row][col] = Knight(frame: frame, color: lightColor, vc: vc)
                         
                     case 7:
-                        board[row][col] = Rook(frame: frame, color: UIColor.white, vc: vc)
+                        board[row][col] = Rook(frame: frame, color: lightColor, vc: vc)
                         
                     default:
                         board[row][col] =  Dummy(with: frame)
@@ -116,13 +119,13 @@ class ChessBoard: NSObject {
                 case 1:
                     switch col {
                     default:
-                        board[row][col] = Pawn(frame: frame, color: UIColor.white, vc: vc)
+                        board[row][col] = Pawn(frame: frame, color: lightColor, vc: vc)
                     }
                     
                 case 6:
                     switch col {
                     default:
-                        board[row][col] = Pawn(frame: frame, color: UIColor.black, vc: vc)
+                        board[row][col] = Pawn(frame: frame, color: darkColor, vc: vc)
                     }
                     
                 case 7:
@@ -130,29 +133,29 @@ class ChessBoard: NSObject {
                         
                     case 0 :
                         
-                        board[row][col] = Rook(frame: frame, color: UIColor.black, vc: vc)
+                        board[row][col] = Rook(frame: frame, color: darkColor, vc: vc)
                         
                     case 1:
-                        board[row][col] = Knight(frame: frame, color: UIColor.black, vc: vc)
+                        board[row][col] = Knight(frame: frame, color: darkColor, vc: vc)
                         
                     case 2:
-                        board[row][col] = Bishop(frame: frame, color: UIColor.black, vc: vc)
+                        board[row][col] = Bishop(frame: frame, color:darkColor, vc: vc)
                         
                     case 3:
-                        whiteKing = King(frame: frame, color: UIColor.black, vc: vc)
+                        whiteKing = King(frame: frame, color: darkColor, vc: vc)
                         board[row][col] = whiteKing
                         
                     case 4:
-                         board[row][col] = Queen(frame: frame, color: UIColor.black, vc: vc)
+                         board[row][col] = Queen(frame: frame, color: darkColor, vc: vc)
                         
                     case 5:
-                        board[row][col] = Bishop(frame: frame, color: UIColor.black, vc: vc)
+                        board[row][col] = Bishop(frame: frame, color: darkColor, vc: vc)
                         
                     case 6:
-                        board[row][col] = Knight(frame: frame, color: UIColor.black, vc: vc)
+                        board[row][col] = Knight(frame: frame, color: darkColor, vc: vc)
                         
                     case 7:
-                        board[row][col] = Rook(frame: frame, color: UIColor.black, vc: vc)
+                        board[row][col] = Rook(frame: frame, color: darkColor, vc: vc)
                         
                     default:
                         board[row][col] =  Dummy(with: frame)

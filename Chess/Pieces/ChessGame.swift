@@ -16,8 +16,15 @@ class ChessGame:NSObject {
     }
     
     func isValidMove(with piece:UIChessPiece, from sourceIndex:BoardIndex, to destinationIndex:BoardIndex)-> Bool {
+    
+    guard isMoveOnBoard(from: sourceIndex, to: destinationIndex) else {
+            print("Move out of Board bounds:\(sourceIndex)-\(destinationIndex)")
+            return false
+        }
         return true
     }
+    
+    
 
     func move(piece pieceToMove:UIChessPiece, from sourceIndex:BoardIndex, to destinationIndex:BoardIndex, to origin:CGPoint){
     
@@ -35,7 +42,28 @@ class ChessGame:NSObject {
         
     //4/ Put dummy piece at Source Location
         chessBoard.board[sourceIndex.row][sourceIndex.col] = Dummy(with: sourceFrame)
+    }
     
+    
+    
+    func isMoveOnBoard(from sourceIndex:BoardIndex,to destinationIndex:BoardIndex)-> Bool{
+        
+        if case 0..<chessBoard.number_Row = sourceIndex.row {
+            
+            if case 0..<chessBoard.number_Col = sourceIndex.col {
+                
+                if case 0..<chessBoard.number_Row = destinationIndex.row {
+                    
+                    if case 0..<chessBoard.number_Col = destinationIndex.col {
+                        
+                        return true
+                    }
+                    
+                }
+            }
+            
+        }
+        return false
     }
 
  }
