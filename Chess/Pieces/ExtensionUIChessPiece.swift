@@ -19,6 +19,11 @@ enum PieceColor {
 public class UIChessPiece:UILabel,Piece {
     var symbol: PieceColor = .White
     
+    
+    func isMovePossible(from source:BoardIndex, destinationIndex:BoardIndex)->Bool {
+        return true
+    }
+    
 }
 
 

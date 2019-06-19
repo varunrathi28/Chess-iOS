@@ -36,6 +36,9 @@ class Rook : UIChessPiece {
         super.init(coder: aDecoder)!
     }
 
+    override func isMovePossible(from source: BoardIndex, destinationIndex: BoardIndex) -> Bool {
+    return true
+}
 }
 
 
