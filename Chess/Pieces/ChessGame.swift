@@ -11,17 +11,27 @@ import UIKit
 class ChessGame:NSObject {
 
     var chessBoard:ChessBoard!
+    var isWhiteTurn:Bool = true
+    
+    
     init(viewController:ChessViewController){
         chessBoard = ChessBoard.init(controller: viewController)
     }
     
     func isValidMove(with piece:UIChessPiece, from sourceIndex:BoardIndex, to destinationIndex:BoardIndex)-> Bool {
     
+    // Check move with the board indices
     guard isMoveOnBoard(from: sourceIndex, to: destinationIndex) else {
             print("Move out of Board bounds:\(sourceIndex)-\(destinationIndex)")
             return false
         }
-        return true
+        
+        // Check the correct turn
+        guard self.isTurnColorSame(with: piece) else {
+            return false
+        }
+        
+        return isNormalMoveValid(with: piece, from: sourceIndex, to: destinationIndex)
     }
     
     
@@ -65,6 +75,46 @@ class ChessGame:NSObject {
         }
         return false
     }
-
+    
+    func nextTurn(){
+            isWhiteTurn = !isWhiteTurn
+    }
+    
+    
+    func isTurnColorSame(with piece:UIChessPiece)->Bool {
+    
+        if piece.symbol == .Black && isWhiteTurn == false {
+            return true
+        }
+        else if piece.symbol == .White && isWhiteTurn {
+            return true
+        }
+        return false
+    }
+    
+    func isNormalMoveValid(with piece:UIChessPiece,from sourceIndex:BoardIndex, to destinationIndex:BoardIndex)->Bool{
+    
+        
+        guard sourceIndex != destinationIndex else {
+        return false
+        }
+        
+        guard !isAttackingAlliedPiece(piece: piece, destination: destinationIndex) else {
+            return false
+        }
+        
+        return true
+    }
+    
+    func isAttackingAlliedPiece(piece:UIChessPiece,destination:BoardIndex)->Bool {
+        let destinationPiece = chessBoard.board[destination.row][destination.col]
+        
+        guard (destinationPiece is Dummy) == false else {
+            return false
+        }
+        
+        return piece.symbol == destinationPiece.symbol
+    }
+    
  }
 
