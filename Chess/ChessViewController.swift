@@ -95,7 +95,10 @@ class ChessViewController: UIViewController {
             // Change origin to new origin for valid move
             
             if chessGame.isValidMove(with: pieceDragged, from: sourceIndex, to: destinationIndex){
-                pieceDragged.frame.origin = endOrigin
+            
+                chessGame.move(piece: pieceDragged, from: sourceIndex, to: destinationIndex, to: endOrigin)
+            
+              //  pieceDragged.frame.origin = endOrigin
                 
                 //TODO:- Play retract sound
             }

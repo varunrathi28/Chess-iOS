@@ -33,6 +33,34 @@ class ChessBoard: NSObject {
         
     }
     
+    
+    
+    func place(piece chessPiece:UIChessPiece,to destinationIndex:BoardIndex,origin toOrgin: CGPoint ){
+    
+        chessPiece.frame.origin = toOrgin
+        board[destinationIndex.row][destinationIndex.col] = chessPiece
+    }
+    func removePiece(piece toRemove:Piece){
+    
+        if let piece = toRemove as? UIChessPiece {
+        
+         // remove from boardMatrix
+         let indexOnBoard = ChessBoard.indexOf(origin: piece.frame.origin)
+         board[indexOnBoard.row][indexOnBoard.col] = Dummy(with: piece.frame)
+         
+          // remove from chess pieces on view controller
+          
+          if let indexInVCArray = vc.chessPieces.index(of:piece) {
+            vc.chessPieces.remove(at: indexInVCArray)
+            }
+            
+            
+          // remove from screen
+          piece.removeFromSuperview()
+         
+        }
+    }
+    
     init(controller:ChessViewController) {
         
         vc = controller
