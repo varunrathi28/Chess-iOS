@@ -9,8 +9,7 @@
 import UIKit
 
 class Dummy :Piece {
-
-    var symbol: String = " "
+    var symbol: PieceColor = .None
     private var xStorage:CGFloat!
     private var yStorage:CGFloat!
     

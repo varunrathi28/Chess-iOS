@@ -10,16 +10,17 @@ import UIKit
 
 class Bishop : UIChessPiece {
 
- init(frame:CGRect, color:UIColor, vc:ChessViewController) {
+ init(frame:CGRect, color:UIColor, vc:ChessViewController,pieceColor:PieceColor = .White) {
         super.init(frame: frame)
     
-        if (color ==  UIColor.black){
+         if (pieceColor ==  PieceColor.Black){
                 self.text = "♝"
         }else
         {
                 self.text = "♗"
         }
     
+        self.symbol = pieceColor
         self.isOpaque = false
         self.textColor = color
         self.isUserInteractionEnabled = true
