@@ -10,9 +10,15 @@ import UIKit
 
 //typealias UIChessPiece = UILabel
 
+enum PieceColor {
+    case White
+    case Black
+    case None
+}
 
 public class UIChessPiece:UILabel,Piece {
-    var symbol: String = ""
+    var symbol: PieceColor = .White
+    
 }
 
 

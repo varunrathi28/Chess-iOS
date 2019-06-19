@@ -39,8 +39,9 @@ class ChessViewController: UIViewController {
         for chessPiece in chessPieces {
             chessPiece.removeFromSuperview()
         }
-    
+        
         chessGame = ChessGame.init(viewController: self)
+        chessGame.resetGame()
     }
     
     
@@ -54,6 +55,7 @@ class ChessViewController: UIViewController {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         if let dragged = touches.first?.view as? UIChessPiece {
+        
             pieceDragged = dragged
             startOrigin = pieceDragged.frame.origin
         }
@@ -97,9 +99,9 @@ class ChessViewController: UIViewController {
             if chessGame.isValidMove(with: pieceDragged, from: sourceIndex, to: destinationIndex){
             
                 chessGame.move(piece: pieceDragged, from: sourceIndex, to: destinationIndex, to: endOrigin)
+                chessGame.nextTurn()
+                updateTurnOnScreen()
             
-              //  pieceDragged.frame.origin = endOrigin
-                
                 //TODO:- Play retract sound
             }
             // reset the piece to original location for invalid move.
@@ -113,6 +115,11 @@ class ChessViewController: UIViewController {
         
     }
     
+    func updateTurnOnScreen(){
+    
+        lblDisplayTurn.text = chessGame.isWhiteTurn ? "White's Turn" : "Black's Turn" 
+    }
+
     func drag(piece:UIChessPiece,using gestureRecognizer:UIPanGestureRecognizer){
     
         let translation  = gestureRecognizer.translation(in: view)

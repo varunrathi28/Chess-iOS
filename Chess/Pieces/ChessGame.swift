@@ -18,6 +18,17 @@ class ChessGame:NSObject {
         chessBoard = ChessBoard.init(controller: viewController)
     }
     
+    func resetGame(){
+    isWhiteTurn = true
+   
+    }
+    
+    // Check
+    //1. Out of bounds
+    //2. Check correct turn
+    //3  Check turn on same color
+    //4. Check turn on same index, Source == destination
+    
     func isValidMove(with piece:UIChessPiece, from sourceIndex:BoardIndex, to destinationIndex:BoardIndex)-> Bool {
     
     // Check move with the board indices
