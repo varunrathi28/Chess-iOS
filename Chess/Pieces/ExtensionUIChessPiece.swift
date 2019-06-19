@@ -20,7 +20,7 @@ public class UIChessPiece:UILabel,Piece {
     var symbol: PieceColor = .White
     
     
-    func isMovePossible(from source:BoardIndex, destinationIndex:BoardIndex)->Bool {
+    func isMovePossible(from source:BoardIndex, destination:BoardIndex)->Bool {
         return true
     }
     

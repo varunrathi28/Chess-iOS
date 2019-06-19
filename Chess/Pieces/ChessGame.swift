@@ -104,18 +104,58 @@ class ChessGame:NSObject {
     }
     
     func isNormalMoveValid(with piece:UIChessPiece,from sourceIndex:BoardIndex, to destinationIndex:BoardIndex)->Bool{
-    
+        
         
         guard sourceIndex != destinationIndex else {
-        return false
+            return false
         }
         
         guard !isAttackingAlliedPiece(piece: piece, destination: destinationIndex) else {
             return false
         }
         
+        
+        switch piece {
+        case is Pawn:
+            return isMoveValid(forPawn: piece as! Pawn, from: sourceIndex, to: destinationIndex)
+            
+        case is Rook, is Bishop, is Queen:
+            return isMoveValid(forRookOrQueenOrBishop: piece, sourceIndex: sourceIndex, to: destinationIndex)
+            
+        case is Knight:
+            if (piece as! Knight).isMovePossible(from: sourceIndex, destination: destinationIndex) == false{
+                return false
+            }
+             
+        case is King:
+            return  isMoveValid(forKing: piece as! King, sourceIndex: sourceIndex, to: destinationIndex)
+            break
+            
+        default:
+            break
+        }
+        
         return true
     }
+    
+    func isMoveValid(forPawn: Pawn, from sourceIndex:BoardIndex, to destinationIndex:BoardIndex) -> Bool {
+    
+        if forPawn.isMovePossible(from: sourceIndex, destination: destinationIndex) == false {
+            return false
+        }
+    
+        return true
+    }
+    
+    
+    func isMoveValid(forRookOrQueenOrBishop:UIChessPiece, sourceIndex:BoardIndex, to destinationIndex:BoardIndex) -> Bool {
+        return true
+    }
+    
+     func isMoveValid(forKing:King, sourceIndex:BoardIndex, to destinationIndex:BoardIndex) -> Bool{
+            return true
+    }
+    
     
     func isAttackingAlliedPiece(piece:UIChessPiece,destination:BoardIndex)->Bool {
         let destinationPiece = chessBoard.board[destination.row][destination.col]

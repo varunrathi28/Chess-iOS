@@ -36,7 +36,7 @@ class Knight:UIChessPiece {
     }
 
 
-    override func isMovePossible(from source:BoardIndex, destinationIndex:BoardIndex)->Bool {
+    override func isMovePossible(from source:BoardIndex, destination:BoardIndex)->Bool {
         return true
     }
 

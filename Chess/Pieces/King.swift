@@ -35,7 +35,7 @@ init(frame:CGRect, color:UIColor, vc:ChessViewController,pieceColor:PieceColor =
         super.init(coder: aDecoder)!
     }
 
-    override func isMovePossible(from source: BoardIndex, destinationIndex: BoardIndex) -> Bool {
+    override func isMovePossible(from source: BoardIndex, destination: BoardIndex) -> Bool {
     return true
 }
 }

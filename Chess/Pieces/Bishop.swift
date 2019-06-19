@@ -35,7 +35,7 @@ class Bishop : UIChessPiece {
         super.init(coder: aDecoder)!
     }
 
-    override func isMovePossible(from source: BoardIndex, destinationIndex: BoardIndex) -> Bool {
+    override func isMovePossible(from source: BoardIndex, destination: BoardIndex) -> Bool {
     return true
 }
 
