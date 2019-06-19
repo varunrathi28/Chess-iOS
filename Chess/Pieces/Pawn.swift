@@ -14,7 +14,7 @@ class Pawn: UIChessPiece {
         super.init(frame: frame)
         
         if (color ==  UIColor.black){
-                self.text = "♟"
+                self.text = "♙"
         }else
         {
                 self.text = "♙"

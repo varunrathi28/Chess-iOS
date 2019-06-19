@@ -18,6 +18,14 @@ class ChessBoard: NSObject {
     var blackKing:Piece!
     
     
+    
+    static func indexOf(origin:CGPoint) -> BoardIndex{
+    
+        let row = (Int(origin.y) - ChessViewController.SPACE_FROM_TOP_EDGE)/ChessViewController.tileSize
+        let col = (Int(origin.x) - ChessViewController.SPACE_FROM_LEFT_EDGE)/ChessViewController.tileSize
+        return BoardIndex(row: row, col: col)
+    }
+    
     static  func getFrame(forRow row:Int, forCol col:Int)->CGRect {
         let x  = (ChessViewController.SPACE_FROM_LEFT_EDGE + col * ChessViewController.tileSize)
         let y = (ChessViewController.SPACE_FROM_TOP_EDGE + row * ChessViewController.tileSize)

@@ -88,11 +88,24 @@ class ChessViewController: UIViewController {
            endOrigin  = CGPoint(x: x, y: y)
            
            
-           let sourceIndex = BoardIndex(row: 0, col: 0 )
+           let sourceIndex = ChessBoard.indexOf(origin: startOrigin)
+           let destinationIndex = ChessBoard.indexOf(origin: endOrigin)
            
-           let destinationIndex = BoardIndex(row: 0, col: 0 )
-           
-         //  if chessGame.chessBoar
+         
+            // Change origin to new origin for valid move
+            
+            if chessGame.isValidMove(with: pieceDragged, from: sourceIndex, to: destinationIndex){
+                pieceDragged.frame.origin = endOrigin
+                
+                //TODO:- Play retract sound
+            }
+            // reset the piece to original location for invalid move.
+            else {
+                pieceDragged.frame.origin = startOrigin
+                
+                //TODO:- Play board sound for successfull move
+            }
+         
         }
         
     }
